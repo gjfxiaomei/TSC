@@ -29,11 +29,12 @@ PHASE_EWL_GREEN = 6  # action 3 code 11
 PHASE_EWL_YELLOW = 7
 
 class Simulation:
-    def __init__(self,args,netdata):
+    def __init__(self,args,netdata,log):
 
         self.t = 0
         self.args = args
         self.sumo_cmd = set_sumo(args.gui, args.roadnet, args.max_steps, args.port)
+        self.log = log
         print(self.sumo_cmd)
 
         self.save_path = set_save_path(args.roadnet,args.tsc)
